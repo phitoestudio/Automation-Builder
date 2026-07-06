@@ -1,298 +1,976 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Landing Page Premium</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-<style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-}
-
-body{
-background:#0f172a;
-color:#fff;
-overflow-x:hidden;
-}
-
-header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:25px 8%;
-position:fixed;
-width:100%;
-background:rgba(15,23,42,.85);
-backdrop-filter:blur(10px);
-z-index:1000;
-}
-
-.logo{
-font-size:28px;
-font-weight:700;
-color:#38bdf8;
-}
-
-nav a{
-text-decoration:none;
-color:#fff;
-margin-left:30px;
-transition:.3s;
-}
-
-nav a:hover{
-color:#38bdf8;
-}
-
-.hero{
-display:flex;
-align-items:center;
-justify-content:space-between;
-padding:140px 8%;
-min-height:100vh;
-gap:50px;
-}
-
-.hero-text{
-flex:1;
-}
-
-.hero-text h1{
-font-size:56px;
-line-height:1.2;
-margin-bottom:20px;
-}
-
-.hero-text p{
-font-size:18px;
-color:#cbd5e1;
-margin-bottom:35px;
-}
-
-.btn{
-display:inline-block;
-padding:15px 35px;
-background:#38bdf8;
-color:white;
-text-decoration:none;
-border-radius:50px;
-font-weight:600;
-transition:.3s;
-}
-
-.btn:hover{
-transform:translateY(-3px);
-box-shadow:0 10px 25px rgba(56,189,248,.4);
-}
-
-.hero-image{
-flex:1;
-display:flex;
-justify-content:center;
-}
-
-.card{
-width:400px;
-height:400px;
-background:linear-gradient(135deg,#38bdf8,#2563eb);
-border-radius:30px;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:120px;
-box-shadow:0 30px 60px rgba(0,0,0,.4);
-}
-
-section{
-padding:90px 8%;
-}
-
-.title{
-text-align:center;
-font-size:38px;
-margin-bottom:50px;
-}
-
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
-}
-
-.box{
-background:#1e293b;
-padding:35px;
-border-radius:18px;
-transition:.3s;
-}
-
-.box:hover{
-transform:translateY(-10px);
-background:#334155;
-}
-
-.box h3{
-margin-bottom:15px;
-}
-
-.testimonial{
-background:#1e293b;
-padding:35px;
-border-radius:20px;
-text-align:center;
-max-width:700px;
-margin:auto;
-}
-
-footer{
-padding:40px;
-text-align:center;
-background:#020617;
-color:#94a3b8;
-}
-
-@media(max-width:900px){
-
-.hero{
-flex-direction:column;
-text-align:center;
-}
-
-.hero-text h1{
-font-size:40px;
-}
-
-.card{
-width:280px;
-height:280px;
-font-size:80px;
-}
-
-nav{
-display:none;
-}
-
-}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Phitoe Automation Builder Pro - AI Business Automation</title>
+  <meta name="description" content="Phitoe Automation Builder Pro adalah platform automasi bisnis all-in-one untuk TikTok, e-commerce, SEO, WhatsApp, WordPress, Notion, dan integrasi API. Promo IDR 187,000.">
+  <meta name="keywords" content="Phitoe Automation Builder Pro, automasi bisnis, AI automation, TikTok automation, e-commerce automation, SEO automation, WhatsApp API, WordPress, Notion">
+  <meta name="author" content="Phitoe">
+  <meta property="og:title" content="Phitoe Automation Builder Pro - Promo IDR 187,000">
+  <meta property="og:description" content="Otomatiskan 90% pekerjaan rutin bisnis digital dengan AI, workflow, dan integrasi API lintas platform.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="workflow-pro-product-3d.png">
+  <meta name="theme-color" content="#05070d">
+  <style>
+    :root {
+      --bg: #05070d;
+      --bg-soft: #090d16;
+      --panel: rgba(255,255,255,.075);
+      --panel-strong: rgba(255,255,255,.12);
+      --line: rgba(255,255,255,.16);
+      --text: #f7fbff;
+      --muted: #a8b4c2;
+      --cyan: #49e6ff;
+      --teal: #37e7c0;
+      --green: #6cf2a8;
+      --gold: #ffd064;
+      --blue: #5b8cff;
+      --danger: #ff6b8a;
+      --ink: #060a12;
+      --shadow: 0 30px 90px rgba(0,0,0,.42);
+      --radius: 8px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--text);
+      background: var(--bg);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    body:before {
+      content: "";
+      position: fixed;
+      inset: -25%;
+      z-index: -3;
+      background:
+        radial-gradient(circle at 18% 18%, rgba(73,230,255,.35), transparent 26%),
+        radial-gradient(circle at 78% 10%, rgba(108,242,168,.22), transparent 28%),
+        radial-gradient(circle at 74% 78%, rgba(255,208,100,.20), transparent 32%),
+        radial-gradient(circle at 24% 80%, rgba(91,140,255,.24), transparent 30%),
+        linear-gradient(135deg, #05070d 0%, #0d1424 52%, #05070d 100%);
+      animation: aurora 16s ease-in-out infinite alternate;
+      filter: saturate(1.18);
+    }
+    body:after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+      background-size: 54px 54px;
+      mask-image: linear-gradient(to bottom, black 0%, transparent 78%);
+    }
+    @keyframes aurora {
+      from { transform: translate3d(-2%, -1%, 0) rotate(0deg) scale(1); }
+      to { transform: translate3d(2%, 2%, 0) rotate(5deg) scale(1.07); }
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    button { font: inherit; }
+    .container { width: min(1180px, calc(100% - 40px)); margin: 0 auto; }
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      border-bottom: 1px solid rgba(255,255,255,.12);
+      background: rgba(5,7,13,.74);
+      backdrop-filter: blur(18px);
+    }
+    .nav-inner {
+      min-height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 950;
+      letter-spacing: 0;
+    }
+    .logo-img {
+      width: 44px;
+      height: 44px;
+      padding: 4px;
+      object-fit: contain;
+      border-radius: 8px;
+      background: rgba(255,255,255,.94);
+      box-shadow: 0 0 40px rgba(73,230,255,.22);
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .nav-links a:hover { color: var(--text); }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 48px;
+      padding: 0 18px;
+      border-radius: var(--radius);
+      border: 1px solid transparent;
+      font-weight: 900;
+      white-space: nowrap;
+      cursor: pointer;
+      transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease, background .22s ease;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary {
+      color: #061018;
+      background: linear-gradient(135deg, var(--gold), var(--green) 55%, var(--cyan));
+      box-shadow: 0 18px 46px rgba(55,231,192,.25), inset 0 1px 0 rgba(255,255,255,.55);
+    }
+    .btn-ghost {
+      border-color: rgba(255,255,255,.18);
+      background: rgba(255,255,255,.07);
+      backdrop-filter: blur(16px);
+    }
+    .hero {
+      position: relative;
+      min-height: calc(100vh - 74px);
+      display: grid;
+      align-items: center;
+      padding: 72px 0 42px;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.02fr .98fr;
+      align-items: center;
+      gap: 44px;
+    }
+    .eyebrow, .mini-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--green);
+      border: 1px solid rgba(108,242,168,.28);
+      background: rgba(108,242,168,.085);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 850;
+    }
+    h1, h2, h3 { margin: 0; line-height: 1.05; letter-spacing: 0; }
+    h1 {
+      margin-top: 20px;
+      max-width: 860px;
+      font-size: clamp(42px, 7vw, 82px);
+    }
+    h2 { font-size: clamp(31px, 4vw, 54px); }
+    h3 { font-size: 21px; }
+    .gradient-text {
+      background: linear-gradient(100deg, var(--text), var(--cyan) 36%, var(--green) 68%, var(--gold));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .lead {
+      max-width: 700px;
+      margin: 22px 0 0;
+      color: var(--muted);
+      font-size: clamp(17px, 2vw, 21px);
+    }
+    .hero-proof {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+      color: #d8e8f5;
+      font-size: 13px;
+    }
+    .proof-item {
+      border: 1px solid rgba(255,255,255,.13);
+      background: rgba(255,255,255,.06);
+      border-radius: 999px;
+      padding: 7px 11px;
+    }
+    .price-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: end;
+      gap: 14px;
+      margin: 28px 0 18px;
+    }
+    .old-price {
+      color: #8492a6;
+      text-decoration: line-through;
+      font-size: 22px;
+      font-weight: 750;
+    }
+    .new-price {
+      color: var(--gold);
+      font-size: clamp(38px, 5vw, 58px);
+      font-weight: 950;
+      line-height: 1;
+    }
+    .cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 18px; }
+    .countdown {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(72px, 1fr));
+      gap: 10px;
+      max-width: 460px;
+      margin-top: 24px;
+    }
+    .glass, .card, .stat, .timebox, .faq-item, .quote, .pricing-card, .dashboard, .before-after-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(255,255,255,.095), rgba(255,255,255,.055));
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(18px);
+    }
+    .timebox {
+      padding: 12px;
+      text-align: center;
+    }
+    .timebox strong { display: block; font-size: 25px; line-height: 1; }
+    .timebox span { color: var(--muted); font-size: 12px; }
+    .visual-stack {
+      position: relative;
+      min-height: 620px;
+      display: grid;
+      place-items: center;
+      perspective: 1200px;
+    }
+    .visual-stack:before {
+      content: "";
+      position: absolute;
+      width: 85%;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(73,230,255,.24), rgba(108,242,168,.15), transparent 64%);
+      filter: blur(10px);
+    }
+    .product {
+      position: relative;
+      z-index: 2;
+      width: min(600px, 100%);
+      border-radius: 20px;
+      filter: drop-shadow(0 36px 82px rgba(0,0,0,.48));
+      animation: floaty 5.5s ease-in-out infinite;
+    }
+    @keyframes floaty {
+      0%, 100% { transform: translateY(0) rotate(-1deg); }
+      50% { transform: translateY(-15px) rotate(1deg); }
+    }
+    .dashboard {
+      position: absolute;
+      right: -12px;
+      bottom: 32px;
+      z-index: 3;
+      width: min(430px, 84%);
+      padding: 16px;
+      transform: rotateX(9deg) rotateY(-12deg) rotateZ(1deg);
+      background:
+        linear-gradient(135deg, rgba(12,20,34,.94), rgba(12,30,44,.82)),
+        rgba(255,255,255,.08);
+    }
+    .dash-top { display: flex; justify-content: space-between; gap: 10px; align-items: center; margin-bottom: 14px; }
+    .dash-dots { display: flex; gap: 6px; }
+    .dash-dots span { width: 8px; height: 8px; border-radius: 50%; background: var(--cyan); opacity: .8; }
+    .dash-title { color: var(--muted); font-size: 12px; font-weight: 850; }
+    .dash-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 10px; }
+    .dash-panel {
+      min-height: 86px;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 8px;
+      background: rgba(255,255,255,.055);
+      padding: 12px;
+      overflow: hidden;
+    }
+    .bar { height: 8px; border-radius: 999px; margin: 9px 0; background: linear-gradient(90deg, var(--cyan), var(--green)); }
+    .bar:nth-child(2) { width: 72%; }
+    .bar:nth-child(3) { width: 54%; background: linear-gradient(90deg, var(--blue), var(--gold)); }
+    .pulse-dot {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      margin: 5px auto 0;
+      background: radial-gradient(circle, var(--green), rgba(55,231,192,.16) 62%, transparent 64%);
+      animation: pulse 1.8s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(.95); opacity: .8; }
+      50% { transform: scale(1.08); opacity: 1; }
+    }
+    .integration-cloud {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 10px;
+      margin-top: 28px;
+    }
+    .integration {
+      min-height: 74px;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 10px;
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.06);
+      color: #dce9f5;
+      font-weight: 850;
+      transition: transform .22s ease, border-color .22s ease, background .22s ease;
+    }
+    .integration:hover {
+      transform: translateY(-4px);
+      border-color: rgba(73,230,255,.44);
+      background: rgba(73,230,255,.10);
+    }
+    section { padding: 88px 0; }
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 32px;
+    }
+    .section-head p { max-width: 610px; margin: 0; color: var(--muted); }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .card, .quote, .before-after-card { padding: 24px; }
+    .card:hover, .pricing-card:hover, .quote:hover {
+      transform: translateY(-4px);
+      border-color: rgba(73,230,255,.32);
+    }
+    .card, .pricing-card, .quote { transition: transform .22s ease, border-color .22s ease; }
+    .icon {
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 16px;
+      border-radius: 8px;
+      color: var(--ink);
+      background: linear-gradient(135deg, var(--cyan), var(--green));
+      font-weight: 950;
+    }
+    .card p, .quote p, .before-after-card p { color: var(--muted); margin: 12px 0 0; }
+    .workflow-map {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+      overflow: hidden;
+    }
+    .workflow-map:before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 5%;
+      right: 5%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--cyan), var(--green), var(--gold), transparent);
+      animation: flowline 2.4s linear infinite;
+    }
+    @keyframes flowline {
+      from { filter: hue-rotate(0deg); opacity: .55; }
+      to { filter: hue-rotate(80deg); opacity: 1; }
+    }
+    .flow-node {
+      position: relative;
+      z-index: 2;
+      min-height: 118px;
+      display: grid;
+      align-content: center;
+      padding: 18px;
+      text-align: center;
+    }
+    .flow-node strong { display: block; color: var(--cyan); margin-bottom: 6px; }
+    .stats-band {
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: linear-gradient(90deg, rgba(73,230,255,.10), rgba(108,242,168,.09), rgba(255,208,100,.10));
+    }
+    .stat {
+      padding: 24px;
+      text-align: center;
+    }
+    .stat strong {
+      display: block;
+      font-size: clamp(34px, 4vw, 48px);
+      color: var(--green);
+      line-height: 1;
+    }
+    .stat span { display: block; margin-top: 8px; color: var(--muted); }
+    .before-after {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .before-after-card.before { border-color: rgba(255,107,138,.28); }
+    .before-after-card.after { border-color: rgba(108,242,168,.32); }
+    .check-list { padding: 0; margin: 18px 0 0; list-style: none; color: var(--muted); }
+    .check-list li { margin: 10px 0; }
+    .check-list li:before {
+      content: "\2713";
+      color: var(--green);
+      font-weight: 950;
+      margin-right: 9px;
+    }
+    .pricing-card {
+      position: relative;
+      overflow: hidden;
+      padding: 32px;
+    }
+    .pricing-card:before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(73,230,255,.15), rgba(108,242,168,.07), rgba(255,208,100,.11));
+      pointer-events: none;
+    }
+    .pricing-card > * { position: relative; z-index: 1; }
+    .pricing-layout {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 24px;
+      align-items: center;
+    }
+    .badge {
+      display: inline-flex;
+      color: var(--ink);
+      background: linear-gradient(135deg, var(--gold), var(--green));
+      border-radius: 999px;
+      padding: 7px 11px;
+      font-size: 12px;
+      font-weight: 950;
+    }
+    .testimonial-wrap { overflow: hidden; }
+    .testimonial-track {
+      display: flex;
+      gap: 16px;
+      animation: carousel 22s linear infinite;
+    }
+    .quote {
+      min-width: 360px;
+      flex: 0 0 360px;
+    }
+    @keyframes carousel {
+      from { transform: translateX(0); }
+      to { transform: translateX(calc(-360px * 3 - 48px)); }
+    }
+    .faq { display: grid; gap: 12px; }
+    .faq-button {
+      width: 100%;
+      min-height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 0 18px;
+      color: var(--text);
+      background: transparent;
+      border: 0;
+      text-align: left;
+      font-weight: 900;
+      cursor: pointer;
+    }
+    .faq-button span:last-child { color: var(--cyan); font-size: 24px; }
+    .faq-content {
+      max-height: 0;
+      overflow: hidden;
+      color: var(--muted);
+      transition: max-height .26s ease;
+    }
+    .faq-content p { margin: 0; padding: 0 18px 18px; }
+    .faq-item.active .faq-content { max-height: 190px; }
+    .final-cta {
+      text-align: center;
+      padding: 56px 28px;
+      background:
+        linear-gradient(135deg, rgba(73,230,255,.15), rgba(108,242,168,.08), rgba(255,208,100,.13)),
+        rgba(255,255,255,.065);
+    }
+    .final-cta p {
+      max-width: 720px;
+      margin: 16px auto 0;
+      color: var(--muted);
+    }
+    footer {
+      padding: 34px 0 92px;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+    }
+    .footer-inner { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+    .wa-float {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 60;
+      width: 58px;
+      height: 58px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: #061018;
+      background: #42f0a8;
+      box-shadow: 0 18px 42px rgba(66,240,168,.34);
+      border: 1px solid rgba(255,255,255,.38);
+      font-weight: 950;
+    }
+    .sticky-cta {
+      position: fixed;
+      left: 50%;
+      bottom: 18px;
+      z-index: 55;
+      width: min(620px, calc(100% - 112px));
+      transform: translateX(-50%) translateY(90px);
+      opacity: 0;
+      pointer-events: none;
+      transition: transform .25s ease, opacity .25s ease;
+    }
+    .sticky-cta.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .sticky-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 10px;
+      border: 1px solid rgba(255,255,255,.16);
+      border-radius: 10px;
+      background: rgba(5,7,13,.82);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 18px 48px rgba(0,0,0,.38);
+    }
+    .sticky-inner strong { color: var(--gold); }
+    [data-aos] {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity .72s ease, transform .72s ease;
+    }
+    [data-aos].show { opacity: 1; transform: translateY(0); }
+    @media (max-width: 980px) {
+      .nav-links { display: none; }
+      .hero-grid, .pricing-layout, .before-after { grid-template-columns: 1fr; }
+      .visual-stack { min-height: 520px; }
+      .grid-3, .grid-4, .integration-cloud, .workflow-map { grid-template-columns: repeat(2, 1fr); }
+      .workflow-map:before { display: none; }
+      .section-head { display: block; }
+      .section-head p { margin-top: 12px; }
+      .dashboard { right: 0; bottom: 0; }
+    }
+    @media (max-width: 620px) {
+      .container { width: min(100% - 28px, 1180px); }
+      .nav-inner { min-height: 66px; }
+      .brand span:last-child { max-width: 170px; overflow: hidden; text-overflow: ellipsis; }
+      .btn { width: 100%; min-height: 52px; }
+      .nav .btn { display: none; }
+      .cta-row { width: 100%; }
+      .countdown, .grid-2, .grid-3, .grid-4, .integration-cloud, .workflow-map { grid-template-columns: 1fr 1fr; }
+      .card, .quote, .pricing-card, .before-after-card { padding: 18px; }
+      section { padding: 64px 0; }
+      .hero { padding: 42px 0 34px; }
+      .visual-stack { min-height: 420px; }
+      .product { width: 112%; max-width: none; }
+      .dashboard { width: 92%; padding: 12px; }
+      .quote { min-width: 300px; flex-basis: 300px; }
+      .sticky-cta { width: calc(100% - 92px); }
+      .sticky-inner { display: block; }
+      .sticky-inner span { display: block; margin-bottom: 8px; text-align: center; }
+    }
+  </style>
 </head>
-
 <body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="#home" class="brand" aria-label="Phitoe Automation Builder Pro">
+        <img class="logo-img" src="logo.png" alt="Logo Phitoe">
+        <span>Phitoe Automation</span>
+      </a>
+      <div class="nav-links">
+        <a href="#integrasi">Integrasi</a>
+        <a href="#workflow">Workflow</a>
+        <a href="#hasil">Hasil</a>
+        <a href="#pricing">Harga</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <a class="btn btn-primary" href="http://lynk.id/yudtube/61nl2wl0y6eg/checkout" data-track="nav-buy">Beli Sekarang</a>
+    </div>
+  </nav>
 
-<header>
+  <main id="home">
+    <header class="hero">
+      <div class="container hero-grid">
+        <div data-aos>
+          <span class="eyebrow">AI automation command center untuk bisnis digital</span>
+          <h1>Phitoe Automation Builder Pro <span class="gradient-text">mengubah kerja repetitif jadi 1 klik.</span></h1>
+          <p class="lead">Otomatiskan caption, order, invoice, WhatsApp, artikel SEO, WordPress, Notion, email, dan integrasi API sehingga Anda bisa fokus melipatgandakan omset.</p>
+          <div class="hero-proof">
+            <span class="proof-item">TikTok Automation</span>
+            <span class="proof-item">E-Commerce Workflow</span>
+            <span class="proof-item">SEO Content Engine</span>
+            <span class="proof-item">9+ API Integration</span>
+          </div>
+          <div class="price-row" aria-label="Harga promo">
+            <span class="old-price">IDR 287,000</span>
+            <span class="new-price">IDR 187,000</span>
+          </div>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="http://lynk.id/yudtube/61nl2wl0y6eg/checkout" data-track="hero-buy">Beli Sekarang</a>
+            <a class="btn btn-ghost" href="https://wa.me/6285647678910" data-track="hero-whatsapp">Konsultasi WhatsApp</a>
+          </div>
+          <div class="countdown" aria-label="Countdown promo">
+            <div class="timebox"><strong id="days">00</strong><span>Hari</span></div>
+            <div class="timebox"><strong id="hours">00</strong><span>Jam</span></div>
+            <div class="timebox"><strong id="minutes">00</strong><span>Menit</span></div>
+            <div class="timebox"><strong id="seconds">00</strong><span>Detik</span></div>
+          </div>
+        </div>
+        <div class="visual-stack" data-aos>
+          <img class="product" src="workflow-pro-product-3d.png" alt="Mockup produk 3D Phitoe Automation Builder Pro">
+          <div class="dashboard" aria-label="Mockup dashboard 3D">
+            <div class="dash-top">
+              <div class="dash-dots"><span></span><span></span><span></span></div>
+              <div class="dash-title">Command Center Live</div>
+            </div>
+            <div class="dash-grid">
+              <div class="dash-panel">
+                <strong>Automation Output</strong>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+              </div>
+              <div class="dash-panel">
+                <strong>API Status</strong>
+                <div class="pulse-dot"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
 
-<div class="logo">MyBrand</div>
+    <section id="integrasi">
+      <div class="container">
+        <div class="section-head" data-aos>
+          <h2>Terhubung dengan ekosistem digital besar.</h2>
+          <p>Phitoe siap diposisikan sebagai pusat automasi untuk AI, social media, website, database, komunikasi, dan toko online Anda.</p>
+        </div>
+        <div class="integration-cloud" data-aos>
+          <div class="integration">OpenAI</div>
+          <div class="integration">Gemini</div>
+          <div class="integration">Claude</div>
+          <div class="integration">WhatsApp</div>
+          <div class="integration">TikTok</div>
+          <div class="integration">WordPress</div>
+          <div class="integration">Notion</div>
+          <div class="integration">Meta</div>
+          <div class="integration">LinkedIn</div>
+          <div class="integration">SMTP Email</div>
+          <div class="integration">Webhook</div>
+          <div class="integration">Local AI</div>
+        </div>
+      </div>
+    </section>
 
-<nav>
-<a href="#fitur">Fitur</a>
-<a href="#testimoni">Testimoni</a>
-<a href="#kontak">Kontak</a>
-</nav>
+    <section class="stats-band" id="hasil">
+      <div class="container grid-4">
+        <div class="stat" data-aos><strong data-count="10000">0</strong><span>Workflow siap dikembangkan</span></div>
+        <div class="stat" data-aos><strong data-count="98" data-suffix="%">0</strong><span>proses lebih cepat</span></div>
+        <div class="stat" data-aos><strong data-count="90" data-suffix="%">0</strong><span>kerja repetitif otomatis</span></div>
+        <div class="stat" data-aos><strong data-count="24">0</strong><span>/7 respons & pencatatan</span></div>
+      </div>
+    </section>
 
-</header>
+    <section>
+      <div class="container">
+        <div class="section-head" data-aos>
+          <h2>Before vs After</h2>
+          <p>Dari bisnis yang penuh pekerjaan manual menjadi mesin operasional digital yang berjalan lebih konsisten.</p>
+        </div>
+        <div class="before-after">
+          <article class="before-after-card before" data-aos>
+            <span class="mini-pill">Before</span>
+            <h3>Semua dikerjakan manual</h3>
+            <p>Caption dibuat satu per satu, order dicatat ulang, invoice dikirim lambat, chat pelanggan menumpuk, artikel SEO tertunda, dan laporan tersebar di banyak tempat.</p>
+          </article>
+          <article class="before-after-card after" data-aos>
+            <span class="mini-pill">After</span>
+            <h3>Sistem yang mengerjakan rutinitas</h3>
+            <p>Video masuk, AI membuat copywriting, order dianalisa, invoice terkirim, stok ter-update, artikel dipublish, dan semua aktivitas tercatat rapi di command center.</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-<section class="hero">
+    <section id="workflow">
+      <div class="container">
+        <div class="section-head" data-aos>
+          <h2>3 workflow utama untuk mengubah bisnis.</h2>
+          <p>Dirancang untuk UMKM, content creator, digital marketer, agency, dan pebisnis e-commerce yang ingin bekerja lebih efisien.</p>
+        </div>
+        <div class="grid-3">
+          <article class="card" data-aos>
+            <div class="icon">01</div>
+            <h3>TikTok Automation</h3>
+            <p>Upload video, AI Caption Generator, auto-post social media, notifikasi WhatsApp, broadcast newsletter, dan rekap database di Notion.</p>
+          </article>
+          <article class="card" data-aos>
+            <div class="icon">02</div>
+            <h3>E-Commerce Automation</h3>
+            <p>Order masuk via webhook/API, AI analisa pesanan, generate invoice, kirim WA & email, update stok, dan laporan order otomatis.</p>
+          </article>
+          <article class="card" data-aos>
+            <div class="icon">03</div>
+            <h3>Digital Marketing & SEO</h3>
+            <p>Input keyword, AI riset konten, generate artikel, gambar pendukung, optimasi SEO, auto-publish WordPress, dan promosi social media.</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-<div class="hero-text">
+    <section>
+      <div class="container">
+        <div class="section-head" data-aos>
+          <h2>How It Works</h2>
+          <p>Workflow dibuat agar pekerjaan kompleks terasa seperti menekan tombol eksekusi pada dashboard SaaS modern.</p>
+        </div>
+        <div class="workflow-map">
+          <div class="glass flow-node" data-aos><strong>Input</strong><span>Video, order, keyword, atau webhook.</span></div>
+          <div class="glass flow-node" data-aos><strong>AI Engine</strong><span>Analisa, copywriting, artikel, invoice.</span></div>
+          <div class="glass flow-node" data-aos><strong>Integrasi</strong><span>WhatsApp, email, WordPress, Notion.</span></div>
+          <div class="glass flow-node" data-aos><strong>Publish</strong><span>Konten, notifikasi, database, laporan.</span></div>
+          <div class="glass flow-node" data-aos><strong>History</strong><span>Audit trail dan log aktivitas lengkap.</span></div>
+        </div>
+      </div>
+    </section>
 
-<h1>Bangun Website Profesional Dalam Hitungan Menit</h1>
+    <section>
+      <div class="container">
+        <div class="section-head" data-aos>
+          <h2>Kenapa harus pakai sekarang?</h2>
+          <p>Setiap jam yang habis untuk pekerjaan repetitif adalah jam yang tidak dipakai untuk strategi, closing, dan scale.</p>
+        </div>
+        <div class="grid-3">
+          <article class="card" data-aos><div class="icon">AI</div><h3>Hemat biaya admin</h3><p>Kurangi pekerjaan input data, follow-up, dan publikasi manual yang biasanya menyita banyak tenaga operasional.</p></article>
+          <article class="card" data-aos><div class="icon">UI</div><h3>Dashboard bersih</h3><p>Pantau total automasi berjalan, output konten, status API, dan history dari satu layar komando.</p></article>
+          <article class="card" data-aos><div class="icon">API</div><h3>Fleksibel & aman</h3><p>Siap untuk penyimpanan lokal personal atau backend server untuk skala SaaS publik dan penggunaan tim.</p></article>
+        </div>
+      </div>
+    </section>
 
-<p>
-Landing page modern, cepat, responsif, dan siap membantu meningkatkan penjualan bisnis Anda.
-</p>
+    <section>
+      <div class="container">
+        <div class="section-head" data-aos>
+          <h2>Bonus yang didapat</h2>
+          <p>Paket dibuat agar Anda tidak hanya membeli tool, tetapi juga mendapatkan struktur eksekusi yang siap dipakai.</p>
+        </div>
+        <div class="grid-4">
+          <article class="card" data-aos><h3>Prompt AI Bisnis</h3><p>Formula caption, artikel, invoice, follow-up, dan newsletter.</p></article>
+          <article class="card" data-aos><h3>Template Workflow</h3><p>Alur TikTok, order, SEO, WhatsApp, email, dan database.</p></article>
+          <article class="card" data-aos><h3>Checklist API</h3><p>Struktur koneksi, payload, log, dan status integrasi.</p></article>
+          <article class="card" data-aos><h3>Landing CTA Kit</h3><p>Headline, benefit, FAQ, testimoni, dan penawaran promo.</p></article>
+        </div>
+      </div>
+    </section>
 
-<a href="https://wa.me/6281234567890" class="btn">
-Hubungi Sekarang
-</a>
+    <section id="pricing">
+      <div class="container">
+        <div class="pricing-card" data-aos>
+          <div class="pricing-layout">
+            <div>
+              <span class="badge">Promo Launch</span>
+              <h2 style="margin-top:16px">Phitoe Automation Builder Pro</h2>
+              <p class="lead">Akses platform automasi bisnis all-in-one untuk menghemat waktu, biaya admin, dan energi operasional harian.</p>
+              <div class="price-row">
+                <span class="old-price">IDR 287,000</span>
+                <span class="new-price">IDR 187,000</span>
+              </div>
+              <div class="cta-row">
+                <a class="btn btn-primary" href="http://lynk.id/yudtube/61nl2wl0y6eg/checkout" data-track="pricing-buy">Beli Sekarang</a>
+                <a class="btn btn-ghost" href="https://wa.me/6285647678910" data-track="pricing-whatsapp">Tanya via WhatsApp</a>
+              </div>
+            </div>
+            <div>
+              <h3>Termasuk di dalam paket</h3>
+              <ul class="check-list">
+                <li>TikTok Automation untuk creator dan social media marketer</li>
+                <li>E-commerce Automation untuk order, invoice, WA, email, dan stok</li>
+                <li>Digital Marketing & SEO untuk artikel, WordPress, dan promosi</li>
+                <li>Integrasi OpenAI, Gemini, Claude, WhatsApp, WordPress, Notion, dan webhook</li>
+                <li>Audit trail dan history agar aktivitas automasi mudah dilacak</li>
+                <li>Garansi bantuan akses setelah pembelian</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-</div>
+    <section id="testimoni">
+      <div class="container">
+        <div class="section-head" data-aos>
+          <h2>Testimoni carousel</h2>
+          <p>Kesan pengguna setelah workflow bisnisnya tidak lagi bergantung pada pekerjaan manual yang berulang.</p>
+        </div>
+        <div class="testimonial-wrap" data-aos>
+          <div class="testimonial-track">
+            <article class="quote"><h3>Raka - Creator</h3><p>"Sekali upload, ide caption, CTA, dan arsip konten jadi jauh lebih cepat rapi."</p></article>
+            <article class="quote"><h3>Dina - Seller</h3><p>"Invoice dan notifikasi WA yang instan bikin pelanggan terasa dilayani lebih profesional."</p></article>
+            <article class="quote"><h3>Fajar - Agency</h3><p>"Workflow SEO-nya membantu produksi artikel dan publish WordPress tanpa banyak langkah manual."</p></article>
+            <article class="quote"><h3>Yulia - UMKM</h3><p>"Order masuk, stok, dan catatan laporan lebih mudah dipantau dari satu alur."</p></article>
+            <article class="quote"><h3>Arman - Marketer</h3><p>"Integrasi AI dan API membuat campaign lebih konsisten tanpa harus lembur setiap hari."</p></article>
+            <article class="quote"><h3>Nadia - Founder</h3><p>"Rasanya seperti punya command center kecil untuk operasional digital."</p></article>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<div class="hero-image">
+    <section id="faq">
+      <div class="container">
+        <div class="section-head" data-aos>
+          <h2>Garansi & FAQ</h2>
+          <p>Pertanyaan penting sebelum mulai mengotomatisasi bisnis dengan Phitoe Automation Builder Pro.</p>
+        </div>
+        <div class="faq">
+          <div class="faq-item active" data-aos>
+            <button class="faq-button" type="button"><span>Apakah ini cocok untuk UMKM dan creator?</span><span>+</span></button>
+            <div class="faq-content"><p>Ya. Paket ini dirancang untuk UMKM, content creator, digital marketer, agency, dan pebisnis e-commerce yang ingin menekan pekerjaan repetitif.</p></div>
+          </div>
+          <div class="faq-item" data-aos>
+            <button class="faq-button" type="button"><span>Apakah harus paham coding?</span><span>+</span></button>
+            <div class="faq-content"><p>Tidak harus. Struktur workflow dibuat praktis. Untuk integrasi API lanjutan, developer atau tim teknis bisa menyesuaikan payload dan backend.</p></div>
+          </div>
+          <div class="faq-item" data-aos>
+            <button class="faq-button" type="button"><span>Apa saja platform yang didukung?</span><span>+</span></button>
+            <div class="faq-content"><p>AI model, TikTok, Meta, LinkedIn, WordPress, Notion, WhatsApp Business API, Email SMTP, local webhook, dan local AI model.</p></div>
+          </div>
+          <div class="faq-item" data-aos>
+            <button class="faq-button" type="button"><span>Bagaimana dengan keamanan API?</span><span>+</span></button>
+            <div class="faq-content"><p>Konsep sistem mendukung penyimpanan lokal untuk penggunaan personal dan backend server untuk skala publik, sehingga implementasi bisa disesuaikan kebutuhan keamanan.</p></div>
+          </div>
+          <div class="faq-item" data-aos>
+            <button class="faq-button" type="button"><span>Bagaimana cara membeli?</span><span>+</span></button>
+            <div class="faq-content"><p>Klik tombol Beli Sekarang, selesaikan checkout di Lynk.id, lalu ikuti instruksi akses produk setelah pembayaran.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<div class="card">
-🚀
-</div>
+    <section>
+      <div class="container">
+        <div class="final-cta glass" data-aos>
+          <span class="eyebrow">Jangan biarkan kompetitor bergerak lebih efisien duluan</span>
+          <h2 style="margin-top:16px">Siap mengotomatisasi bisnis Anda hari ini?</h2>
+          <p>Beralih ke Phitoe Automation Builder Pro dan rasakan kebebasan waktu dari pekerjaan rutin yang seharusnya bisa dikerjakan sistem.</p>
+          <div class="cta-row" style="justify-content:center">
+            <a class="btn btn-primary" href="http://lynk.id/yudtube/61nl2wl0y6eg/checkout" data-track="final-buy">Beli Sekarang - IDR 187,000</a>
+            <a class="btn btn-ghost" href="https://wa.me/6285647678910" data-track="final-whatsapp">Chat WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
-</div>
+  <footer>
+    <div class="container footer-inner">
+      <span>&copy; 2026 Phitoe Automation Builder Pro. All rights reserved.</span>
+      <span>Pure HTML + CSS + JavaScript. Siap upload.</span>
+    </div>
+  </footer>
 
-</section>
+  <div class="sticky-cta" id="stickyCta" aria-hidden="true">
+    <div class="sticky-inner">
+      <span>Promo Phitoe: <strong>IDR 187,000</strong></span>
+      <a class="btn btn-primary" href="http://lynk.id/yudtube/61nl2wl0y6eg/checkout" data-track="sticky-buy">Beli Sekarang</a>
+    </div>
+  </div>
+  <a class="wa-float" href="https://wa.me/6285647678910" aria-label="WhatsApp" data-track="floating-whatsapp">WA</a>
 
-<section id="fitur">
+  <script>
+    const promoEnd = new Date();
+    promoEnd.setDate(promoEnd.getDate() + 2);
+    promoEnd.setHours(23, 59, 59, 999);
 
-<h2 class="title">Kenapa Memilih Kami?</h2>
+    function pad(value) {
+      return String(value).padStart(2, "0");
+    }
 
-<div class="grid">
+    function updateCountdown() {
+      const now = new Date();
+      const distance = Math.max(0, promoEnd - now);
+      const days = Math.floor(distance / 86400000);
+      const hours = Math.floor((distance % 86400000) / 3600000);
+      const minutes = Math.floor((distance % 3600000) / 60000);
+      const seconds = Math.floor((distance % 60000) / 1000);
+      document.getElementById("days").textContent = pad(days);
+      document.getElementById("hours").textContent = pad(hours);
+      document.getElementById("minutes").textContent = pad(minutes);
+      document.getElementById("seconds").textContent = pad(seconds);
+    }
 
-<div class="box">
-<h3>⚡ Cepat</h3>
-<p>Website ringan dengan performa tinggi.</p>
-</div>
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
 
-<div class="box">
-<h3>📱 Responsive</h3>
-<p>Tampil sempurna di HP, tablet, maupun desktop.</p>
-</div>
+    document.querySelectorAll(".faq-button").forEach((button) => {
+      button.addEventListener("click", () => {
+        const item = button.closest(".faq-item");
+        item.classList.toggle("active");
+      });
+    });
 
-<div class="box">
-<h3>🔒 Aman</h3>
-<p>Mudah dipasang di hosting atau GitHub Pages.</p>
-</div>
+    const countValues = new WeakSet();
+    function animateCount(element) {
+      const target = Number(element.dataset.count || 0);
+      const suffix = element.dataset.suffix || "";
+      const duration = 1200;
+      const start = performance.now();
+      function tick(now) {
+        const progress = Math.min(1, (now - start) / duration);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        const value = Math.round(target * eased);
+        element.textContent = target >= 1000 ? value.toLocaleString("id-ID") + "+" : value + suffix;
+        if (progress < 1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+    }
 
-<div class="box">
-<h3>💎 Modern</h3>
-<p>Desain elegan dengan tampilan premium.</p>
-</div>
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+          entry.target.querySelectorAll("[data-count]").forEach((counter) => {
+            if (!countValues.has(counter)) {
+              countValues.add(counter);
+              animateCount(counter);
+            }
+          });
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.14 });
 
-</div>
+    document.querySelectorAll("[data-aos], .stats-band").forEach((element) => revealObserver.observe(element));
 
-</section>
+    const stickyCta = document.getElementById("stickyCta");
+    window.addEventListener("scroll", () => {
+      stickyCta.classList.toggle("show", window.scrollY > 620);
+    }, { passive: true });
 
-<section id="testimoni">
-
-<h2 class="title">Testimoni</h2>
-
-<div class="testimonial">
-
-<h3>⭐⭐⭐⭐⭐</h3>
-
-<p>
-"Website kami terlihat jauh lebih profesional dan membantu meningkatkan kepercayaan pelanggan."
-</p>
-
-<br>
-
-<b>- Pelanggan Puas</b>
-
-</div>
-
-</section>
-
-<section id="kontak">
-
-<h2 class="title">Siap Memulai?</h2>
-
-<div style="text-align:center">
-
-<a href="https://wa.me/6281234567890" class="btn">
-Konsultasi Gratis
-</a>
-
-</div>
-
-</section>
-
-<footer>
-
-© 2026 MyBrand. All Rights Reserved.
-
-</footer>
-
+    document.querySelectorAll("[data-track]").forEach((element) => {
+      element.addEventListener("click", () => {
+        console.log("CTA click:", element.dataset.track);
+      });
+    });
+  </script>
 </body>
 </html>
